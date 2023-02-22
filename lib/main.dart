@@ -73,7 +73,6 @@ class _HomePageState extends State<HomePage> {
                         double.tryParse(_priceController.text);
                     if (price != null) {
                       await _products.add({"name": name, "price": price});
-
                       _nameController.text = '';
                       _priceController.text = '';
                       Navigator.of(context).pop();
@@ -155,7 +154,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueGrey,
+        backgroundColor: Colors.blueGrey,
         appBar: AppBar(
           title: const Center(child: Text('CRUD')),
         ),
@@ -165,6 +164,7 @@ class _HomePageState extends State<HomePage> {
             if (streamSnapshot.hasData) {
               return ListView.builder(
                 itemCount: streamSnapshot.data!.docs.length,
+
                 itemBuilder: (context, index) {
                   final DocumentSnapshot documentSnapshot =
                       streamSnapshot.data!.docs[index];
